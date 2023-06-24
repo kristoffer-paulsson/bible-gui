@@ -1,11 +1,16 @@
 import wx
 
+from biblegui.gui.MainWindow import MainWindow
+
+
+class BibleLibraryGui(wx.App):
+    def OnInit(self):
+        self.frame = MainWindow(None, wx.ID_ANY, "")
+        self.SetTopWindow(self.frame)
+        self.frame.Show()
+        return True
+
 
 def main():
-    app = wx.App()
-
-    window = wx.Frame(None, title="Bible Analyzer", size=(300, 200))
-    panel = wx.Panel(window)
-    label = wx.StaticText(panel, label="For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. - John 3:16 (KJV)", pos=(100, 50))
-    window.Show(True)
-    app.MainLoop()
+    BibleApp = BibleLibraryGui(0)
+    BibleApp.MainLoop()

@@ -1,0 +1,3 @@
+wxPython
+
+git+https://github.com/wxGlade/wxGlade@v1.0.5
